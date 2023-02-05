@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "taasuraat": {
+      "hosting": {
+        "taasuraat": [
+          "taasuraat"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "taasuraat"
+  }
+}

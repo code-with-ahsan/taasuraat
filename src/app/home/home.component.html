@@ -1,0 +1,20 @@
+<form (submit)="formSubmit($event)" *ngIf="!!user">
+  <section class="flex flex-col gap-4">
+    <textarea name="taasur" [(ngModel)]="formValue.taasur" class="border border-slate-800 p-4 rounded-md" id="taasurTextArea" placeholder="Apnay taasuraat bataen"></textarea>
+    <button [disabled]="!formValue.taasur" type="submit" class="bg-purple-600 rounded-md px-3 py-2 text-white hover:bg-purple-700 duration-300 disabled:bg-slate-400">Submit</button>
+  </section>
+</form>
+
+<section class="mt-8">
+  <ul class="flex flex-col gap-4">
+    <li class="flex gap-4 rounded-md border border-slate-300 p-4" *ngFor="let taasur of taasuraatList$ | async">
+      <div>
+        <img class="rounded-full h-16" [src]="taasur.photoURL">
+      </div>
+      <div>
+        <h2>{{taasur.displayName}}</h2>
+        <p class="text-sm">{{taasur.message}}</p>
+      </div>
+    </li>
+  </ul>
+</section>
